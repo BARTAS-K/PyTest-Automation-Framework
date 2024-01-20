@@ -21,3 +21,32 @@ class Tests(BaseClass):
         time.sleep(2)
         loginPage.untranslatedLink().click()
         time.sleep(5)
+        self.popUpClose(self.popUp1)
+        time.sleep(2)
+        self.popUpClose(self.popUp2)
+
+    def test_bug12(self):
+        homePage = HomePage(self.driver)
+        productsPage = ProductsPage(self.driver)
+        productDetailsPage = ProductDetailsPage(self.driver)
+        homePage.findBugsButton().click()
+        productsPage.shoesImageButton().click()
+        productDetailsPage.productDescription().click()
+        time.sleep(5)
+        self.popUpClose(self.popUp1)
+        time.sleep(2)
+        self.popUpClose(self.popUp2)
+
+    def test_bug16(self):
+        homePage = HomePage(self.driver)
+        productsPage = ProductsPage(self.driver)
+        productDetailsPage = ProductDetailsPage(self.driver)
+        homePage.closeTutorialButton().click()
+        homePage.findBugsButton().click()
+        productsPage.addToCartButton().click()
+        productsPage.viewCartButton().click()
+        productDetailsPage.shoppingCartHover()
+        time.sleep(5)
+        #productDetailsPage.checkOutButton().click()
+        productDetailsPage.shoppingCartPopUpButton().click() #doesnt work yet, need to find a solution
+        time.sleep(5)
