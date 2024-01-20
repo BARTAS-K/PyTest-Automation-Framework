@@ -9,6 +9,8 @@ class ProductsPage:
     greyJeansImage = (By.XPATH, "//*[@id='ec_product_image_effect_4281370']/a")
     popUpClose = (By.XPATH, "//*[@id='popmake-4406']/button")
     blueTshirt = (By.XPATH, "//*[@id='ec_product_image_effect_3481370']/a")
+    addToCart = (By.XPATH, "//*[@id='ec_add_to_cart_27']")
+    viewCart = (By.XPATH, "//*[@id='ec_product_page']/div[2]/a")
 
     def __init__(self, driver):
         self.driver = driver
@@ -30,3 +32,9 @@ class ProductsPage:
 
     def blueTshirtButton(self):
         return self.driver.find_element(*ProductsPage.blueTshirt)
+
+    def addToCartButton(self):
+        return self.driver.find_element(*ProductsPage.addToCart)
+
+    def viewCartButton(self):
+        return self.driver.find_element(*ProductsPage.viewCart)
