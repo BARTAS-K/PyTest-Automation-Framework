@@ -5,8 +5,6 @@ from pageObjects.homePage import HomePage
 from pageObjects.loginPage import LoginPage
 from utilities.baseClass import BaseClass
 
-
-#@pytest.mark.usefixtures("setup")
 class Tests(BaseClass):
 
     def test_bug2(self):
@@ -81,4 +79,3 @@ class Tests(BaseClass):
         productDetailsPage.allItemsButton().click()
         productsPage.blueTshirtButton().click()
         time.sleep(3)
-
