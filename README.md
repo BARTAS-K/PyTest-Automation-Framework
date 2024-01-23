@@ -23,3 +23,9 @@ Before running the tests, ensure you have the following installed:
 - Sekenium
 - PyTest - pip install -U pytest
 - Chrome (default) or Firefox browser
+
+
+Work in progress! To do next:
+- Add all tests
+- Implement reports
+- ...
