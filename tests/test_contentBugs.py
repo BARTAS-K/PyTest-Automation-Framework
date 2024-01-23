@@ -1,4 +1,5 @@
 import time
+from pageObjects.myCartPage import MyCartPage
 from utilities.baseClass import BaseClass
 from pageObjects.productDetailsPage import ProductDetailsPage
 from pageObjects.productsPage import ProductsPage
@@ -41,12 +42,43 @@ class Tests(BaseClass):
         homePage = HomePage(self.driver)
         productsPage = ProductsPage(self.driver)
         productDetailsPage = ProductDetailsPage(self.driver)
-        homePage.closeTutorialButton().click()
+        #homePage.closeTutorialButton().click()
         homePage.findBugsButton().click()
         productsPage.addToCartButton().click()
         productsPage.viewCartButton().click()
         productDetailsPage.shoppingCartHover()
         time.sleep(5)
-        #productDetailsPage.checkOutButton().click()
-        productDetailsPage.shoppingCartPopUpButton().click() #doesnt work yet, need to find a solution
+        productDetailsPage.shoppingCartPopUpButton()
         time.sleep(5)
+        self.popUpClose(self.popUp1)
+        time.sleep(2)
+        self.popUpClose(self.popUp2)
+
+    def test_bug19(self):
+        homePage = HomePage(self.driver)
+        productsPage = ProductsPage(self.driver)
+        productDetailsPage = ProductDetailsPage(self.driver)
+        #homePage.closeTutorialButton().click()
+        homePage.findBugsButton().click()
+        productsPage.professionalSuitImageButton().click()
+        productDetailsPage.orangeColorButton().click()
+        productDetailsPage.selectedColorButton().click()
+        time.sleep(2)
+        self.popUpClose(self.popUp1)
+        time.sleep(2)
+        self.popUpClose(self.popUp2)
+
+    def test_bug20(self):
+        homePage = HomePage(self.driver)
+        productsPage = ProductsPage(self.driver)
+        productDetailsPage = ProductDetailsPage(self.driver)
+        myCartPage = MyCartPage(self.driver)
+        #homePage.closeTutorialButton().click()
+        homePage.findBugsButton().click()
+        productsPage.shoesImageButton().click()
+        productDetailsPage.shoppingCartHover()
+        productDetailsPage.checkOutButton().click()
+        myCartPage.deleteItemButton().click()
+        myCartPage.returnToStoreButton().click()
+        time.sleep(5)
+        self.popUpClose(self.popUp1)
