@@ -1,84 +1,64 @@
 import time
 from pageObjects.myCartPage import MyCartPage
-from utilities.baseClass import BaseClass
 from pageObjects.productDetailsPage import ProductDetailsPage
 from pageObjects.productsPage import ProductsPage
 from pageObjects.homePage import HomePage
 from pageObjects.loginPage import LoginPage
+from utilities.baseClass import BaseClass
 
 class Tests(BaseClass):
 
     def test_bug1(self):
-        homePage = HomePage(self.driver)
-        productsPage = ProductsPage(self.driver)
-        productDetailsPage = ProductDetailsPage(self.driver)
-        loginPage = LoginPage(self.driver)
-        homePage.closeTutorialButton().click()
-        homePage.findBugsButton().click()
-        productsPage.shoesImageButton().click()
-        productDetailsPage.signInButton().click()
+        self.page(HomePage).closeTutorialButton().click()
+        self.page(HomePage).findBugsButton().click()
+        self.page(ProductsPage).shoesImageButton().click()
+        self.page(ProductDetailsPage).signInButton().click()
         time.sleep(2)
         self.popUpClose(self.popUp1)
         time.sleep(2)
-        loginPage.untranslatedLink().click()
+        self.page(LoginPage).untranslatedLink().click()
         time.sleep(5)
         self.popUpClose(self.popUp1)
         time.sleep(2)
         self.popUpClose(self.popUp2)
 
     def test_bug12(self):
-        homePage = HomePage(self.driver)
-        productsPage = ProductsPage(self.driver)
-        productDetailsPage = ProductDetailsPage(self.driver)
-        homePage.findBugsButton().click()
-        productsPage.shoesImageButton().click()
-        productDetailsPage.productDescription().click()
+        self.page(HomePage).findBugsButton().click()
+        self.page(ProductsPage).shoesImageButton().click()
+        self.page(ProductDetailsPage).productDescription().click()
         time.sleep(5)
         self.popUpClose(self.popUp1)
         time.sleep(2)
         self.popUpClose(self.popUp2)
 
     def test_bug16(self):
-        homePage = HomePage(self.driver)
-        productsPage = ProductsPage(self.driver)
-        productDetailsPage = ProductDetailsPage(self.driver)
-        #homePage.closeTutorialButton().click()
-        homePage.findBugsButton().click()
-        productsPage.addToCartButton().click()
-        productsPage.viewCartButton().click()
-        productDetailsPage.shoppingCartHover()
+        self.page(HomePage).findBugsButton().click()
+        self.page(ProductsPage).addToCartButton().click()
+        self.page(ProductsPage).viewCartButton().click()
+        self.page(ProductDetailsPage).shoppingCartHover()
         time.sleep(5)
-        productDetailsPage.shoppingCartPopUpButton()
+        self.page(ProductDetailsPage).shoppingCartPopUpButton()
         time.sleep(5)
         self.popUpClose(self.popUp1)
         time.sleep(2)
         self.popUpClose(self.popUp2)
 
     def test_bug19(self):
-        homePage = HomePage(self.driver)
-        productsPage = ProductsPage(self.driver)
-        productDetailsPage = ProductDetailsPage(self.driver)
-        #homePage.closeTutorialButton().click()
-        homePage.findBugsButton().click()
-        productsPage.professionalSuitImageButton().click()
-        productDetailsPage.orangeColorButton().click()
-        productDetailsPage.selectedColorButton().click()
+        self.page(HomePage).findBugsButton().click()
+        self.page(ProductsPage).professionalSuitImageButton().click()
+        self.page(ProductDetailsPage).orangeColorButton().click()
+        self.page(ProductDetailsPage).selectedColorButton().click()
         time.sleep(2)
         self.popUpClose(self.popUp1)
         time.sleep(2)
         self.popUpClose(self.popUp2)
 
     def test_bug20(self):
-        homePage = HomePage(self.driver)
-        productsPage = ProductsPage(self.driver)
-        productDetailsPage = ProductDetailsPage(self.driver)
-        myCartPage = MyCartPage(self.driver)
-        #homePage.closeTutorialButton().click()
-        homePage.findBugsButton().click()
-        productsPage.shoesImageButton().click()
-        productDetailsPage.shoppingCartHover()
-        productDetailsPage.checkOutButton().click()
-        myCartPage.deleteItemButton().click()
-        myCartPage.returnToStoreButton().click()
+        self.page(HomePage).findBugsButton().click()
+        self.page(ProductsPage).shoesImageButton().click()
+        self.page(ProductDetailsPage).shoppingCartHover()
+        self.page(ProductDetailsPage).checkOutButton().click()
+        self.page(MyCartPage).deleteItemButton().click()
+        self.page(MyCartPage).returnToStoreButton().click()
         time.sleep(5)
         self.popUpClose(self.popUp1)
