@@ -15,6 +15,9 @@ class ProductDetailsPage:
     checkOut = (By.XPATH, "//*[@id='ec_cartwidget-2']/div/div[1]/div/a/div")
     orangeColor = (By.XPATH, "//*[@id='post-6190']/div/section/div[1]/div[3]/form/div[5]/div[2]/ul/li[2]/img")
     selectedColor = (By.XPATH, "//*[@id='post-6190']/div/section/div[1]/div[3]/form/div[5]/div[2]/div[1]/div")
+    filterByPrice = (By.XPATH, "//*[@id='ec_pricepointwidget-2']/div/div[3]/a[1]")
+    twitter = (By.XPATH, "//*[@id='post-1675']/div/section/div[1]/div[3]/div[2]/div[2]/a/img")
+    manufacturer = (By.XPATH, "//*[@id='manufacturer-bug']/a")
 
     def __init__(self, driver):
         self.driver = driver
@@ -54,3 +57,12 @@ class ProductDetailsPage:
 
     def selectedColorButton(self):
         return self.driver.find_element(*ProductDetailsPage.selectedColor)
+
+    def filterByPriceButton(self):
+        return self.driver.find_element(*ProductDetailsPage.filterByPrice)
+
+    def twitterButton(self):
+        return self.driver.find_element(*ProductDetailsPage.twitter)
+
+    def manufacturerButton(self):
+        return self.driver.find_element(*ProductDetailsPage.manufacturer)
