@@ -20,7 +20,7 @@ Tests included in this framework cover all 25 bugs, each in a separate test.
 Before running the tests, ensure you have the following installed:
 
 - Python 3.7+
-- Sekenium
+- Selenium
 - PyTest - pip install -U pytest
 - Chrome (default) or Firefox browser
 
@@ -28,4 +28,5 @@ Before running the tests, ensure you have the following installed:
 Work in progress! To do next:
 - Add all tests
 - Implement reports
+- Get rid of "sleeps" wherever possible
 - ...
