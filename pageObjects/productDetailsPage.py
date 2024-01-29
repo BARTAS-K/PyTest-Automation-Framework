@@ -18,6 +18,15 @@ class ProductDetailsPage:
     filterByPrice = (By.XPATH, "//*[@id='ec_pricepointwidget-2']/div/div[3]/a[1]")
     twitter = (By.XPATH, "//*[@id='post-1675']/div/section/div[1]/div[3]/div[2]/div[2]/a/img")
     manufacturer = (By.XPATH, "//*[@id='manufacturer-bug']/a")
+    currency = (By.CLASS_NAME, "ec_currency_select")
+    eurOption = (By.XPATH, "//*[@id='ec_currency_conversion']/option[2]")
+    commentText = (By.XPATH, "//*[@id='comment']")
+    commentName = (By.XPATH, "//*[@id='author']")
+    commentEmail = (By.XPATH, "//*[@id='email']")
+    commentWebsite = (By.XPATH, "//*[@id='url']")
+    postComment = (By.XPATH, "//*[@id='academy-comment-submit']")
+    signUp = (By.XPATH, "//*[@id='login-from-side-menu']/div[4]/p/a")
+    greenColor = (By.XPATH, "//*[@id='post-6192']/div/section/div[1]/div[3]/form/div[5]/div[2]/ul/li[4]/img")
 
     def __init__(self, driver):
         self.driver = driver
@@ -66,3 +75,30 @@ class ProductDetailsPage:
 
     def manufacturerButton(self):
         return self.driver.find_element(*ProductDetailsPage.manufacturer)
+
+    def currencyButton(self):
+        return self.driver.find_element(*ProductDetailsPage.currency)
+
+    def eurOptionButton(self):
+        return self.driver.find_element(*ProductDetailsPage.eurOption)
+
+    def commentTextField(self):
+        return self.driver.find_element(*ProductDetailsPage.commentText)
+
+    def commentNameField(self):
+        return self.driver.find_element(*ProductDetailsPage.commentName)
+
+    def commentEmailField(self):
+        return self.driver.find_element(*ProductDetailsPage.commentEmail)
+
+    def commentWebsiteField(self):
+        return self.driver.find_element(*ProductDetailsPage.commentWebsite)
+
+    def postCommentButton(self):
+        return self.driver.find_element(*ProductDetailsPage.postComment)
+
+    def signUpButton(self):
+        return self.driver.find_element(*ProductDetailsPage.signUp)
+
+    def greenColorButton(self):
+        return self.driver.find_element(*ProductDetailsPage.greenColor)
