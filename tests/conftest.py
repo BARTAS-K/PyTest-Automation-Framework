@@ -1,7 +1,7 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+
 
 @pytest.fixture(scope="class")
 def setup(request):
@@ -10,7 +10,7 @@ def setup(request):
         serviceObject = Service("D:/Downloads/chromedriver.exe")
         driver = webdriver.Chrome(service=serviceObject)
     elif browserName == "firefox":
-        serviceObject = Service("D:/Downloads/geckodriver.exe") #gecko not downloaded yet
+        serviceObject = Service("D:/Downloads/geckodriver.exe")
         driver = webdriver.Firefox(service=serviceObject)
 
     driver.get("https://academybugs.com/")
@@ -18,6 +18,4 @@ def setup(request):
     request.cls.driver = driver
 
 def pytest_addoption(parser):
-    parser.addoption(
-        "--browserName", action="store", default="chrome"
-    )
+    parser.addoption("--browserName", action="store", default="chrome")
