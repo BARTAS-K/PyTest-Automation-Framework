@@ -27,6 +27,10 @@ class ProductDetailsPage:
     postComment = (By.XPATH, "//*[@id='academy-comment-submit']")
     signUp = (By.XPATH, "//*[@id='login-from-side-menu']/div[4]/p/a")
     greenColor = (By.XPATH, "//*[@id='post-6192']/div/section/div[1]/div[3]/form/div[5]/div[2]/ul/li[4]/img")
+    hotItem = (By.XPATH, "//*[@id='ec_image_product_widget_anchor-bracelet_1_0']/img")
+    loadingIcon1 = (By.XPATH, "//*[@id='post-1820']/div/div/div/span")
+    mySpace = (By.XPATH, "//*[@id='post-1675']/div/section/div[1]/div[3]/div[2]/div[6]/a/img")
+    loadingIcon2 = (By.XPATH, "//*[@id='post-1829']/div/p[1]/span/span")
 
     def __init__(self, driver):
         self.driver = driver
@@ -102,3 +106,12 @@ class ProductDetailsPage:
 
     def greenColorButton(self):
         return self.driver.find_element(*ProductDetailsPage.greenColor)
+
+    def hotItemImageButton(self):
+        return self.driver.find_element(*ProductDetailsPage.hotItem)
+
+    def loadingIconButton(self, icon):
+        return self.driver.find_element(*icon)
+
+    def mySpaceButton(self):
+        return self.driver.find_element(*ProductDetailsPage.mySpace)
