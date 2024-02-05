@@ -31,6 +31,7 @@ class ProductDetailsPage:
     loadingIcon1 = (By.XPATH, "//*[@id='post-1820']/div/div/div/span")
     mySpace = (By.XPATH, "//*[@id='post-1675']/div/section/div[1]/div[3]/div[2]/div[6]/a/img")
     loadingIcon2 = (By.XPATH, "//*[@id='post-1829']/div/p[1]/span/span")
+    orderHistory = (By.XPATH, "//*[@id='ec_loginwidget-5']/a[2]")
 
     def __init__(self, driver):
         self.driver = driver
@@ -115,3 +116,6 @@ class ProductDetailsPage:
 
     def mySpaceButton(self):
         return self.driver.find_element(*ProductDetailsPage.mySpace)
+
+    def orderHistoryButton(self):
+        return self.driver.find_element(*ProductDetailsPage.orderHistory)
