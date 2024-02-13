@@ -24,7 +24,7 @@ class ProductDetailsPage:
     commentName = (By.XPATH, "//*[@id='author']")
     commentEmail = (By.XPATH, "//*[@id='email']")
     commentWebsite = (By.XPATH, "//*[@id='url']")
-    postComment = (By.XPATH, "//*[@id='academy-comment-submit']")
+    postComment = (By.XPATH, "//*[@id='submit']")
     signUp = (By.XPATH, "//*[@id='login-from-side-menu']/div[4]/p/a")
     greenColor = (By.XPATH, "//*[@id='post-6192']/div/section/div[1]/div[3]/form/div[5]/div[2]/ul/li[4]/img")
     hotItem = (By.XPATH, "//*[@id='ec_image_product_widget_anchor-bracelet_1_0']/img")
