@@ -11,9 +11,9 @@ class HomePage(Logger):
         self.driver = driver
 
     def closeTutorialButton(self):
-        self.getLogger().info("Closing tutorial popup")
+        self.getLogger().info("Closing tutorial popup.")
         return self.driver.find_element(*HomePage.closeTutorial)
-    
+
     def findBugsButton(self):
-        self.getLogger().info("Clicking on \"Find Bugs\" button")
+        self.getLogger().info("Clicking on the \"Find Bugs\" button.")
         return self.driver.find_element(*HomePage.findBugs)

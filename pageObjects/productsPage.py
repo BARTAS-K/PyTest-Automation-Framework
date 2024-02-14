@@ -17,33 +17,33 @@ class ProductsPage(Logger):
         self.driver = driver
 
     def shoesImageButton(self):
-        self.getLogger().info("Clicking on \"DNK YELLOW SHOES\" image button")
+        self.getLogger().info("Clicking on the \"DNK YELLOW SHOES\" image.")
         return self.driver.find_element(*ProductsPage.shoesImage)
 
     def greyJeansImageButton(self):
-        self.getLogger().info("Clicking on \"DARK GREY JEANS\" image button")
+        self.getLogger().info("Clicking on the \"DARK GREY JEANS\" image.")
         return self.driver.find_element(*ProductsPage.greyJeansImage)
 
     def blueTshirtButton(self):
-        self.getLogger().info("Clicking on \"BLUE TSHIRT\" image button")
+        self.getLogger().info("Clicking on the \"BLUE TSHIRT\" image.")
         return self.driver.find_element(*ProductsPage.blueTshirt)
 
     def addToCartButton(self):
-        self.getLogger().info("Clicking on \"ADD TO CART\" button")
+        self.getLogger().info("Clicking on the \"ADD TO CART\" button.")
         return self.driver.find_element(*ProductsPage.addToCart)
 
     def viewCartButton(self):
-        self.getLogger().info("Clicking on \"VIEW CART\" button")
+        self.getLogger().info("Clicking on the \"VIEW CART\" button.")
         return self.driver.find_element(*ProductsPage.viewCart)
 
     def professionalSuitImageButton(self):
-        self.getLogger().info("Clicking on \"PROFESSIONAL SUIT\" image button")
+        self.getLogger().info("Clicking on the \"PROFESSIONAL SUIT\" image.")
         return self.driver.find_element(*ProductsPage.professionalSuitImage)
 
     def numberOfResultsButton(self):
-        self.getLogger().info("Clicking on different number of results")
+        self.getLogger().info("Clicking on different number of results.")
         return self.driver.find_element(*ProductsPage.numberOfResults)
 
     def denimCoatImageButton(self):
-        self.getLogger().info("Clicking on \"DENIM COAT\" image button")
+        self.getLogger().info("Clicking on the \"DENIM COAT\" image.")
         return self.driver.find_element(*ProductsPage.denimCoat)
